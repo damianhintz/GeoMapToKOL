@@ -225,7 +225,7 @@ namespace GeoMapToKOL.Map
 
             try
             {
-                _roboty.dodajDzialke(_dzia³ka);
+                _roboty.DodajDzia³kê(_dzia³ka.geometry, _dzia³ka.nazwa);
             }
             catch (Exception ex)
             {

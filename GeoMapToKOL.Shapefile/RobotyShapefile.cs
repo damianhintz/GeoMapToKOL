@@ -1,7 +1,5 @@
 using System;
 using OSGeo.OGR;
-using GeoMapToKOL.KERG;
-using GeoMapToKOL.Map;
 
 namespace GeoMapToKOL.Shapefile
 {
@@ -32,19 +30,19 @@ namespace GeoMapToKOL.Shapefile
             this.wKerg = new KergiLayer("KERG", this.ds);
         }
 
-        public bool dodajRobote(Geometry geom, ObiektyKerg kerg)
+        public bool DodajRobotê(Geometry geom, string kerg, string kergTeryt)
         {
-            return wRoboty.dodajObiekt(geom, kerg.kerg, kerg.teryt);
+            return wRoboty.dodajObiekt(geom, kerg, kergTeryt);
         }
 
-        public bool dodajKerg(ObiektyKerg kerg, string opis)
+        public bool DodajKERG(string kerg, string teryt, string rodzaj, string obiekt, string opis)
         {
-            return wKerg.dodajObiekt(null, kerg.teryt, kerg.kerg, kerg.rodzaj, kerg.obiekty[0], opis);
+            return wKerg.dodajObiekt(null, teryt, kerg, rodzaj, obiekt, opis);
         }
 
-        public bool dodajDzialke(Dzia³ka dzialka)
+        public bool DodajDzia³kê(Geometry geometry, string nazwa)
         {
-            return wDzialki.dodajObiekt(dzialka.geometry, dzialka.nazwa);
+            return wDzialki.dodajObiekt(geometry, nazwa);
         }
     }
 }

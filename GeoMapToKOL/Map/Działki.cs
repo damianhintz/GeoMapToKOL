@@ -156,14 +156,14 @@ namespace GeoMapToKOL.Map
 
                 if (union != null)
                 {
-                    shp.dodajRobote(union, mapKerg);
+                    shp.DodajRobotê(union, mapKerg.kerg, mapKerg.teryt);
                     nZakres++;
                 }
                 else
                 {
-
-
-                    shp.dodajKerg(mapKerg, "robota bez zakresu (" + mapKerg.obiekty.Count + " obiekty)");
+                    shp.DodajKERG(mapKerg.kerg, mapKerg.teryt, 
+                        mapKerg.rodzaj, mapKerg.obiekty[0], 
+                        "robota bez zakresu (" + mapKerg.obiekty.Count + " obiekty)");
                     nBezZakres++;
                 }
             }
